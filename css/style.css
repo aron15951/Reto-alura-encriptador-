@@ -1,8 +1,297 @@
-*{
+* {
     padding: 0;
     margin: 0;
-}
-
-.header_container {
-    border: 1px solid red;
-}
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total del elemento */
+  }
+  
+  .wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f3f5fc;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+  }
+  
+  .app-logo {
+    padding: 3%;
+  }
+  
+  .text-area {
+    position: absolute;
+    width: 42%;
+    height: 60%;
+    left: 12%;
+    top: 15%;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    background-color: #f3f5fc;
+  }
+  
+  .text-area::placeholder {
+    color: #0a3871;
+  }
+  
+  .text-area:focus,
+  .text-area:active {
+    border: none;
+    outline: none;
+  }
+  
+  .guidelines {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: 75%;
+  }
+  
+  .guidelines p {
+    color: #6b7178;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    opacity: 0.8;
+  }
+  
+  .action-buttons {
+    display: flex;
+    align-items: flex-start;
+    padding: 1% 0;
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: 82%;
+    gap: 12px;
+  }
+  
+  .btn-encrypt,
+  .btn-decrypt {
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    width: 25%;
+    border-radius: 24px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    line-height: 19px;
+    border-width: thin;
+  }
+  
+  .btn-encrypt {
+    background-color: #0a3871;
+    color: white;
+    border: 1px solid #0a3871;
+  }
+  
+  .btn-decrypt {
+    background-color: #d8dfe8;
+    color: #0a3871;
+    border: 1px solid #0a3871;
+  }
+  
+  .btn-copy {
+    margin-top: 10%;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 0;
+    width: 80%;
+    background-color: #d8dfe8;
+    border-radius: 24px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    line-height: 19px;
+    color: #0a3871;
+    border: solid #0a3871;
+    border-width: thin;
+  }
+  
+  .btn-encrypt:hover,
+  .btn-decrypt:hover,
+  .btn-copy:hover {
+    background-color: #6c7680;
+    color: white;
+  }
+  
+  .output-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 30%;
+    height: 90%;
+    left: 60%;
+    top: 5%;
+    background-color: #fff;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+  }
+  
+  .output-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    gap: 16px;
+    position: absolute;
+    width: 100%;
+    top: 65%;
+    text-align: center;
+  }
+  
+  .output-message h2 {
+    width: 60%;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    color: #343a40;
+  }
+  
+  .output-message p {
+    width: 80%;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #495057;
+    box-sizing: border-box; /* Asegura que el padding y borde se incluyan en el tamaño total */
+  }
+  
+  .output-container img {
+    width: 80%;
+    height: 50%;
+    position: absolute;
+    top: 15%;
+  }
+  
+  /* Diseño responsivo para tablets */
+  @media (max-width: 920px) {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+  
+    .app-logo {
+      margin-top: 1%;
+      margin-left: -5%;
+      width: 20%;
+    }
+  
+    .text-area {
+      width: 80%;
+      height: 60%;
+      left: 10%;
+      top: 5%;
+    }
+  
+    .guidelines {
+      width: 70%;
+      left: 10%;
+      top: 60%;
+    }
+  
+    .guidelines p {
+      font-size: 16px;
+    }
+  
+    .action-buttons {
+      width: 85%;
+      left: 10%;
+      top: 63%;
+    }
+  
+    .btn-encrypt,
+    .btn-decrypt {
+      width: 48%;
+      border-radius: 16px;
+    }
+  
+    .btn-copy {
+      margin-top: 5%;
+      padding: 2% 0;
+      width: 80%;
+      border-radius: 16px;
+    }
+  
+    .output-container {
+      width: 80%;
+      height: 25%;
+      left: 10%;
+      top: 70%;
+    }
+  
+    .output-message {
+      top: 5%;
+      justify-content: right;
+    }
+  
+    .output-container img {
+      display: none;
+    }
+  }
+  
+  /* Diseño responsivo para móviles */
+  @media (max-width: 600px) {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+  
+    .text-area {
+      width: 80%;
+      height: 60%;
+      left: 10%;
+      top: 5%;
+    }
+  
+    .guidelines {
+      width: 80%;
+      left: 10%;
+      top: 55%;
+    }
+  
+    .action-buttons {
+      flex-direction: column;
+      width: 80%;
+      left: 10%;
+      top: 60%;
+      gap: 10px;
+    }
+  
+    .btn-encrypt,
+    .btn-decrypt {
+      width: 100%;
+      border-radius: 16px;
+    }
+  
+    .output-container {
+      width: 80%;
+      height: 22%;
+      left: 10%;ggbggnynynh
+      top: 75%;
+    }
+  
+    .output-message p {
+      padding: 0;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  
+    .output-message {
+      top: 5%;
+    }
+  
+    .output-container img {
+      display: none;
+    }
+  }
+  

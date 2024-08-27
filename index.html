@@ -1,27 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body>
-    <header class="header_container">
-      <img src="img/Logo.svg" alt="logo_alura" />
-    </header>
-    <main class="input">
-      <input class="input" type="'text'" />
-      <p></p>
-      <div class="buttons_container">
-        <button>boton1</button>
-        <button>boton2</button>
-      </div>
-    </main>
-    <aside class="output">
-        <output>
+    <title>Encriptador de Texto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Logo en la esquina superior izquierda -->
+        <img src="./img/Logo.svg" class="app-logo" alt="logo">
 
-        </output>
-    </aside>
-  </body>
+        <!-- Área de texto para la entrada del usuario -->
+        <div class="input-container">
+            <textarea
+                name="inputText"
+                class="text-area"
+                id="inputText"
+                cols="30"
+                rows="10"
+                placeholder="Ingresa texto aquí"
+            ></textarea>
+        </div>
+
+        <!-- Advertencia y pautas para la entrada -->
+        <div class="guidelines">
+            <img src="./img/bi_exclamation-circle-fill.png" alt="icono de exclamación">
+            <p>Solo letras minúsculas y sin acentos</p>
+        </div>
+
+        <!-- Botones para encriptar y desencriptar -->
+        <div class="action-buttons">
+            <button class="btn-encrypt" onclick="encryptText()">Encriptar</button>
+            <input
+                type="button"
+                class="btn-decrypt"
+                value="Desencriptar"
+                onclick="decryptText()"
+            />
+        </div>
+
+        <!-- Área para mostrar el texto encriptado -->
+        <div class="output-container">
+            <img src="./img/muñeco.png" alt="icono" id="icon" />
+            <div class="output-message" id="outputMessage">
+                <h2 id="messageTitle">Ningún mensaje encontrado</h2>
+                <p id="messageParagraph">
+                    Ingresa el texto que deseas encriptar o desencriptar
+                </p>
+                <button class="btn-copy" onclick="copyText()">Copiar</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/index.js"></script>
 </html>
